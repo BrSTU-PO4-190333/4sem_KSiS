@@ -1,0 +1,190 @@
+\begin{center}
+   \textbf{\titlePageWorkType~№\titlePageWorkNumber~\titlePageWorkPart}
+\end{center}
+
+\textbf{Тема}: <<\titlePageTopic>>
+
+\textbf{Цель работы}: Знакомство со структорой ассемблерной программы, процессом её получения и основными возможностями программ TASM, TLINK.
+
+\begin{center}
+   \textbf{Ход работы}:
+\end{center}
+
+
+
+\subparagraph{Задание 2.1} 
+
+\textbf{Условие}: Пользуясь правилами оформления ассемблерных программ, набрать программу Hello в файл LAB01.ASM. Получить выполняемый файл и запустить его. Каков результат?
+
+\textbf{Решение}: 
+
+\lstinputlisting[
+   name=LAB01.ASM,
+]
+{../../src/LAB01.ASM}
+
+\newpage
+
+
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tasm.exe LAB01.ASM
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   LAB01.ASM
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  475k
+\end{lstlisting}
+
+Создался файл LAB01.OBJ.
+
+
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tlink.exe LAB01.OBJ
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Turbo Link  Version 2.0  Copyright (c) 1987, 1989 Borland International
+\end{lstlisting}
+
+Создались файлы: LAB01.EXE, LAB01.MAP.
+
+
+
+\begin{lstlisting}[language=Terminal]
+$ LAB01.EXE
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Hello.
+\end{lstlisting}
+
+
+
+\subparagraph{Задание 2.2}
+
+\textbf{Условие}: Определить, какие файлы создались при получении выполняемого файла. Пользуясь редактором, определить внутренний формат (текстовый или бинарный) КАЖДОГО из них.
+
+\textbf{Решение}: 
+
+\begin{table}[!ht]
+   \begin{center}
+      \begin{tabular}{|c|c|c|c|}
+         \hline
+         после команды  & файл      & тип             & что это               \\ \hline
+         \hline
+         tasm           & LAB01.OBJ & binary format   & объектный файл        \\ \hline
+         tlink          & LAB01.EXE & binary format   & исполняемый файл      \\ \hline
+         tlink          & LAB01.MAP & text format     & файл карта загрузки   \\ \hline
+      \end{tabular}
+   \end{center}
+\end{table}
+
+
+
+\subparagraph{Задание 2.3}
+
+\textbf{Условие}: Получить список ключей TASM, задав пустую командную строку.
+
+\textbf{Решение}: 
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tasm.exe
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
+Syntax:  TASM [options] source [,object] [,listing] [,xref]
+/a,/s         Alphabetic or Source-code segment ordering
+/c            Generate cross-reference in listing
+/dSYM[=VAL]   Define symbol SYM = 0, or = value VAL
+/e,/r         Emulated or Real floating-point instructions
+/h,/?         Display this help screen
+/iPATH        Search PATH for include files
+/jCMD         Jam in an assembler directive CMD (eg. /jIDEAL)
+/kh#,/ks#     Hash table capacity #, String space capacity #
+/l,/la        Generate listing: l=normal listing, la=expanded listing
+/ml,/mx,/mu   Case sensitivity on symbols: ml=all, mx=globals, mu=none
+/mv#          Set maximum valid length for symbols
+/m#           Allow # multiple passes to resolve forward references
+/n            Suppress symbol tables in listing
+/o,/op        Generate overlay object code, Phar Lap-style 32-bit fixups
+/p            Check for code segment overrides in protected mode
+/q            Suppress OBJ records not needed for linking
+/t            Suppress messages if successful assembly
+/w0,/w1,/w2   Set warning level: w0=none, w1=w2=warnings on
+/w-xxx,/w+xxx Disable (-) or enable (+) warning xxx
+/x            Include false conditionals in listing
+/z            Display source line with error message
+/zi,/zd       Debug info: zi=full, zd=line numbers only
+\end{lstlisting}
+
+
+
+\subparagraph{Задание 2.4}
+
+\textbf{Условие}: Получить файл AAA.OBJ из файла LAB01.ASM. Обратить внимание на сообщения TASM. Что изменилось? Выполнить трансляцию ещё раз с ключом /t. На что он влияет?
+
+\textbf{Решение}:
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tasm.exe LAB01.ASM AAA.OBJ
+\end{lstlisting}
+   
+Создался объектный файл AAA.OBJ (прошлый раз был LAB01.OBJ).
+
+\begin{lstlisting}[language=Out]
+Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   LAB01.ASM  to  AAA.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  475k
+\end{lstlisting}
+
+
+
+\subparagraph{Задание 2.5}
+
+\textbf{Условие}: Получить из файла AAA.OBJ файл BBB.EXE без генерации карты  загрузки. Догадайтесь, как это сделать, по аналогии с TASM. Каков вид командной строки?
+
+\textbf{Решение}: 
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tlink.exe
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Turbo Link  Version 2.0  Copyright (c) 1987, 1989 Borland International
+Syntax:  TLINK objfiles, exefile, mapfile, libfiles
+@xxxx indicates use response file xxxx
+Options: /m = map file with publics
+         /x = no map file at all
+         /i = initialize all segments
+         /l = include source line numbers
+         /s = detailed map of segments
+         /n = no default libraries
+         /d = warn if duplicate symbols in libraries
+         /c = lower case significant in symbols
+         /3 = enable 32-bit processing
+         /v = include full symbolic debug information
+         /e = ignore Extended Dictionary
+         /t = create COM file
+\end{lstlisting}
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tlink.exe AAA.OBJ, BBB.EXE /x
+\end{lstlisting}
+   
+\begin{lstlisting}[language=Out]
+Turbo Link  Version 2.0  Copyright (c) 1987, 1989 Borland International
+\end{lstlisting}
+
+Создался только исполняемый файл BBB.EXE (раньше были файлы LAB01.EXE - исполняемый, и LAB01.MAP - карта загрузки).
