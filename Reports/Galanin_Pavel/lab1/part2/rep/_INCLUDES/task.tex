@@ -176,45 +176,7 @@ Remaining memory:  469k
 
 
 
-\subparagraph{Задание 4.5}
-
-\textbf{Условие}:
-Восстановить исходную программу и создать загрузочный модуль Lab2.exe (при этом использовать команду \path{d:\tasm\tasm} /zi lab2.asm на этапе трансляции и команду lab2.obj \path{d:\tasm\tlink} /v lab2.obj на этапе компоновки. Привести в отчете назначение ключей /zi и /v).
-
-\textbf{Решение}:
-
-\begin{lstlisting}[language=Terminal]
-$ d:\tasm\tasm /zi lab2.asm
-\end{lstlisting}
-
-\begin{lstlisting}[language=Out]
-Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
-
-Assembling file:   lab2.asm
-Error messages:    None
-Warning messages:  None
-Passes:            1
-Remaining memory:  473k
-\end{lstlisting}
-
-Размер объектного файла LAB2.OBJ был 309 байт, стал 577 байт (в 1.867 раз больше).
-
-\begin{lstlisting}[language=Terminal]
-$ d:\tasm\tlink /v lab2.obj
-\end{lstlisting}
-
-\begin{lstlisting}[language=Out]
-Turbo Link  Version 2.0  Copyright (c) 1987, 1989 Borland International
-\end{lstlisting}
-
-Размер исполняемого файла LAB2.EXE был 597 байт, стал 1,32 КБ (1 360 байт) (в 2.278 раз больше).
-
-Ключ /zi управляет включением в объектный файл номеров строк исходной программы и другой информации, не требуемой при выполнении программы, но используемой отладчиком.
-
-Ключ /v передает в загрузочный файл символьную информацию, позволяющую отладчику TD выводить на экран полный текст исходной программы, включая метки, комментарии и прочее.
-
-
-
+\input{../_INCLUDES/task-4-5/task-4-5.tex}
 \input{../_INCLUDES/task-4-6-1/task-4-6-1.tex}
 \input{../_INCLUDES/task-4-6-2/task-4-6-2.tex}
 
