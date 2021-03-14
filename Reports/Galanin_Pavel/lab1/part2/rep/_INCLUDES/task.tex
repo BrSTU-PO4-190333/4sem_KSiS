@@ -50,6 +50,51 @@
 
 \textbf{Решение}:
 
+\lstinputlisting[
+   name=Lab2.asm,
+   language={[x86masm]Assembler},
+   tabsize=8,
+   basicstyle=\ttfamily\scriptsize,
+   numbers=left,
+]
+{../../src/lab2.asm}
+
+\newpage
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tasm.exe Lab2.asm
+\end{lstlisting}
+   
+\begin{lstlisting}[language=Out]
+Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:     Lab2.asm
+Error messages:      None
+Warning messages:    None
+Passes:              1
+Remaining memory:    475k
+\end{lstlisting}
+
+\begin{lstlisting}[language=Terminal]
+$ C:\tasm\tlink.exe LAB2.OBJ
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Turbo Link  Version 2.0  Copyright (c) 1987, 1989 Borland International
+\end{lstlisting}
+
+\begin{lstlisting}[language=Terminal]
+$ LAB2.EXE
+\end{lstlisting}
+
+\begin{lstlisting}[language=Out]
+Galan
+Galanin
+Galanin
+Galanin
+Galanin
+\end{lstlisting}
+
 
 
 \subparagraph{Задание 4.3}

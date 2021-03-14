@@ -8,17 +8,17 @@
 Convert the source code to an object file.
 
 ```cmd
-C:\tasm\tasm.exe TASK2.ASM
+C:\tasm\tasm.exe Lab2.asm
 ```
 
 Convert the object file to an executable file.
 
 ```cmd
-C:\tasm\tlink.exe TASK2.OBJ
+C:\tasm\tlink.exe LAB2.OBJ
 ```
 
 Run the executable file.
 
 ```cmd
-TASK2.EXE
+LAB2.EXE
 ```
