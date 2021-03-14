@@ -1,0 +1,52 @@
+% Для работы окружения \begin{Verbatim} code \end{Verbatim}
+\usepackage{fancyvrb}
+
+% Для работы параметров в Verbatim:
+% - breaklines=true (перенос строк)
+% - breakanywhere=true (перенос длинного слова)
+\usepackage{fvextra}
+
+% a package that allows you to use colors
+\usepackage[dvipsnames]{xcolor}
+
+% My bash box
+\DefineVerbatimEnvironment
+{TerminalBox}{Verbatim}
+{
+    breaklines=true,
+    breakanywhere=true,
+    fontfamily=courier,
+    frame=single,
+    rulecolor=\color{red},
+    label=Terminal,
+}
+
+% My output box
+\DefineVerbatimEnvironment
+{OutBox}{Verbatim}
+{
+    breaklines=true,
+    breakanywhere=true,
+    fontfamily=courier,
+    fontsize=\ESKDfontShape{\ttfamily},
+    frame=single,
+    rulecolor=\color{green},
+    label=Out,
+}
+
+% My code box
+\DefineVerbatimEnvironment
+{MyBox}{Verbatim}
+{
+    breaklines=true,
+    breakanywhere=true,
+    fontfamily=courier,
+    frame=single,
+}
+
+% \newenvironment{OutBox}%
+% {\endgraf\noindent MYVERBATIM:%
+% \endgraf\verbatim}%
+% {\endverbatim}
+% \usepackage{courier}
+\DefineVerbatimEnvironment{qqq}{Verbatim}{fontfamily=ttfamily}% Inconsolata
