@@ -39,64 +39,7 @@
 
 
 
-\subparagraph{Задание 4.2}
-
-\textbf{Условие}:
-Пользуясь информацией лаб.раб.1, написать программу \path{Lab2.asm}, работающую по следующему алгоритму:
-\begin{itemize}
-   \item вывести на экран первые N символов фамилии студента (использовать функцию 40h DOS INT 21h) – число N задается преподавателем;
-   \item вывести строку полностью в цикле N-1 раз на экран. Привести программу в отчете.
-\end{itemize}
-
-\textbf{Решение}:
-
-\lstinputlisting[
-   name=Lab2.asm,
-   language={[x86masm]Assembler},
-   tabsize=8,
-   basicstyle=\ttfamily\scriptsize,
-   numbers=left,
-]
-{../../src/lab2.asm}
-
-\newpage
-
-\begin{lstlisting}[language=Terminal]
-$ C:\tasm\tasm.exe Lab2.asm
-\end{lstlisting}
-   
-\begin{lstlisting}[language=Out]
-Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
-
-Assembling file:     Lab2.asm
-Error messages:      None
-Warning messages:    None
-Passes:              1
-Remaining memory:    475k
-\end{lstlisting}
-
-\begin{lstlisting}[language=Terminal]
-$ C:\tasm\tlink.exe LAB2.OBJ
-\end{lstlisting}
-
-\begin{lstlisting}[language=Out]
-Turbo Link  Version 2.0  Copyright (c) 1987, 1989 Borland International
-\end{lstlisting}
-
-\begin{lstlisting}[language=Terminal]
-$ LAB2.EXE
-\end{lstlisting}
-
-\begin{lstlisting}[language=Out]
-Galan
-Galanin
-Galanin
-Galanin
-Galanin
-\end{lstlisting}
-
-
-
+\input{../_INCLUDES/task-4-2/task-4-2.tex}
 \input{../_INCLUDES/task-4-3/task-4-3.tex}
 \input{../_INCLUDES/task-4-4/task-4-4.tex}
 \input{../_INCLUDES/task-4-5/task-4-5.tex}
