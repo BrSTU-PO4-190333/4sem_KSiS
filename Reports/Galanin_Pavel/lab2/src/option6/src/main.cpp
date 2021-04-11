@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS	// для VS включить старые функции
+#define _CRT_SECURE_NO_WARNINGS	// для VS включить старые функции
 
 #include <cstdio>
 #include <cstdlib>
@@ -11,7 +11,7 @@ void print(char* str);									// печать строки
 void print_time(double start_time, double end_time);	// печать времени
 void func_cpp(char* str, int length);					// заменяет нечётные символы на +
 void func_assembler(char* str, int length);				// заменяет нечётные символы на +
-void test_change_str(void (*func)(char*, int), const char* title);				// тест изменения строки
+void test_change_str(void (*func)(char*, int), const char* title);	// тест изменения строки
 void time_test(int iterations, void (*func)(char*, int), const char* title);	// тест по времени
 
 int main()
@@ -71,17 +71,17 @@ void func_assembler(char* my_string, int my_length)
 {
 	__asm
 	{
-		mov edi, my_string										// edi = my_string
-		mov ecx, my_length										// ecx = my_length
-		mov eax, 0												// eax = 0
-	lo:															// 
-		inc edi													// edi = edi + 1
-		test eax, 1												// if (eax % 2 == 1) then zf = ? 
-		jz ev													// goto ev
-		mov byte ptr[edi - 1], '+'								// arr[edi - 1] = '+'
-	ev:															//
-		inc eax													// eax = eax + 1
-		loop lo													// if (ecx != 0) then goto loop; ecx = ecx - 1
+		mov edi, my_string			// edi = my_string
+		mov ecx, my_length			// ecx = my_length
+		mov eax, 0					// eax = 0
+	lo:								// 
+		inc edi						// edi = edi + 1
+		test eax, 1					// if (eax % 2 == 1) then zf = ? 
+		jz ev						// goto ev
+		mov byte ptr[edi - 1], '+'	// arr[edi - 1] = '+'
+	ev:								//
+		inc eax						// eax = eax + 1
+		loop lo						// if (ecx != 0) then goto loop; ecx = ecx - 1
 	}
 }
 
