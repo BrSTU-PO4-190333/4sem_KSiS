@@ -21,7 +21,7 @@ int main()
 	test_change_str(func_assembler, "Assembler");
 
 	// Тесты по времени
-	for (int i = 1; i < 1e8; i *= 10)
+	for (int i = 1; i < 1e8; i *= 2)
 	{
 		time_test(i, func_cpp, "C++");
 		time_test(i, func_assembler, "Assembler");

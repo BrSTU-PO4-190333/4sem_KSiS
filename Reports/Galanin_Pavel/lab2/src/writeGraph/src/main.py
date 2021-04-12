@@ -14,12 +14,9 @@ def get_array_from_csv_file(path):
         arr[i] = arr[i].split(',')
         if (arr[i] == ['']):
             del arr[i]
-    
-    for i in range(len(arr)):
-        data = {}
-        data['iterations'] = arr[i][0]
-        data['time'] = arr[i][1]
-        data['title'] = arr[i][2]
+            continue
+        arr[i][0] = int(arr[i][0])  # iterations
+        arr[i][1] = float(arr[i][1])# time
 
     return arr
 
@@ -44,6 +41,7 @@ if __name__ == '__main__':
     plt.plot(x_asm, y_asm, '<g', label="Assembler")
 
     plt.xlabel("x: iterations")
+    plt.xticks(rotation=45)
     plt.ylabel("y: time, seconds")
     plt.title("Time(iterations)")
     plt.legend()
