@@ -67,3 +67,48 @@
     basicstyle=\ttfamily\scriptsize,
 ]
 {../../src/option6/src/main.cpp}
+
+\newpage
+
+\begin{lstlisting}[
+    name=Console log,
+    basicstyle=\ttfamily\scriptsize,
+]
+Test change string on C++
+str = "Hello, World!"
+str = "H+l+o+ +o+l+!"
+
+Test change string on Assembler
+str = "Hello, World!"
+str = "H+l+o+ +o+l+!"
+
+           1              0.000000000000        C++
+           1              0.000000000000        Assembler
+          10              0.000000000000        C++
+          10              0.000000000000        Assembler
+         100              0.000000000000        C++
+         100              0.000000000000        Assembler
+        1000              0.000000000000        C++
+        1000              0.001000000000        Assembler
+       10000              0.001000000000        C++
+       10000              0.001000000000        Assembler
+      100000              0.023000000000        C++
+      100000              0.028000000000        Assembler
+     1000000              0.211000000000        C++
+     1000000              0.218000000000        Assembler
+    10000000              1.982000000000        C++
+    10000000              2.085000000000        Assembler
+\end{lstlisting}
+
+%\lstinputlisting[
+%    language=Python,
+%    basicstyle=\ttfamily\scriptsize,
+%]
+%{../../src/writeGraph/src/main.py}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[]
+    {../_INCLUDES/option6.png}
+    \caption{Зависимосте времени от итерации (С++/Assembler)}
+\end{figure}
