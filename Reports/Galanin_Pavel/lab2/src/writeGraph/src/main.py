@@ -37,13 +37,13 @@ if __name__ == '__main__':
             y_asm.append(arr[i][1])
 
 
-    plt.plot(x_cpp, y_cpp, '>r', label="C++")
-    plt.plot(x_asm, y_asm, '<g', label="Assembler")
+    plt.plot(x_cpp, y_cpp, '>-r', label='C++')
+    plt.plot(x_asm, y_asm, '<-g', label='Assembler')
 
-    plt.xlabel("x: iterations")
+    plt.xlabel('x: iterations')
     plt.xticks(rotation=45)
-    plt.ylabel("y: time, seconds")
-    plt.title("Time(iterations)")
+    plt.ylabel('y: time, seconds')
+    plt.title('Time(iterations)')
     plt.legend()
     plt.grid(True)
     plt.show()
