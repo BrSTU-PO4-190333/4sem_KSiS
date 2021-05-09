@@ -5,15 +5,18 @@
 
 ## Information
 
-- **Educational institution**: Brest State Technical University
-- **Discipline**: Computer Systems and Networks
+- **Educational institution**: Brest State Technical University (BrSTU)
+- **Discipline**: Computer Systems and Networks (KSiS)
 
 ## Repository Tree
 
 ```
 tree --charset ascii
+```
+
+```
 .
-|-- Instructions    // Lab tasks
-|-- README**. md    // Repository information
-`-- Reports         // Source code
+|-- lab*       # Lab work
+|-- LICENSE    # Repository license
+`-- README*.md # Repository information
 ```
